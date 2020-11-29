@@ -1,0 +1,90 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%; 
+    line-height: 1.6rem;
+   
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+ul li{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.content{
+    
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000000;
+}
+
+.detail-exam{
+    width: 80%;
+    margin: 10px auto;  
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    
+    padding: 20px;
+}
+
+.detail-exam .exam-title{
+    font-size: 2rem;
+    color: #2a70b8;
+}
+
+.detail-exam p{
+    
+    margin-top: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.detail-exam strong{
+    color: #e64b1c;
+}
+.detail-exam .exam-note{
+    color: #e64b1c;
+    font-weight: 700;
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.detail-exam .start_exam-btn{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 20px 0;
+}
+
+.start_exam-btn .start-btn, .back-btn{
+    padding: 10px;
+    width: 140px;
+    text-align: center;
+    color: #000000;
+    margin-right: 38px;
+    font-size: 1.3rem;
+    border: 1px solid #b3b3b3;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.start_exam-btn .start-btn{
+    background-color:#ffc107;
+    border: 1px solid #ffc107;
+}
+.start_exam-btn .start-btn:hover{
+    background-color:#c89705;
+}
+.start_exam-btn .back-btn:hover{
+    background-color:#b3b3b3;
+}

@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #2a70b8;
+    color: #ffffff;
+    padding: 20px 10px;
+    box-shadow: 5px 1px 8px #888888;
+    z-index: 10;
+}
+
+.header .header-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.header a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 0;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    display: flex;
+    text-align: left;
+    font-weight: bold;
+}
+
+.header a.logo img {
+    margin-right: 10px;
+}
+
+.header a.logo .logo-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header .header-right:hover {
+    cursor: pointer;
+}
+
+.header .header-right .header-right-desktop {
+    display: flex;
+    align-items: center;
+}
+
+.header .header-right .header-right-desktop .header-right-title {
+    margin-right: 10px;
+}
+
+.header .header-right .header-right-mobile {
+    display: none;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.content {
+    margin-top: 89.6px;
+}
+
+.content .content-left {
+    width: 20%;
+    position: fixed;
+    height: calc(100% - 89.6px);
+    background-color: #f2f1eb;
+    padding: 25px 0 0 25px;
+}
+
+.content-right {
+    margin-left: 20%;
+    padding: 30px;
+}
+
+.content .content-left .title {
+    padding: 10px 20px;
+    background-color: #2a70b8;
+    color: #ffffff;
+    text-align: center;
+}
+
+.content .content-left .list-item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content .content-left .list-item .active {
+    border-right: 2px solid #2a70b8;
+    /* background-color: #2a70b8; */
+}
+
+.content .content-left .list-item .item {
+    display: flex;
+    padding: 15px 10px;
+    border-radius: 0px 50px 50px 0;
+}
+
+.content .content-left .list-item .item .item-icon {
+    font-size: 25px;
+    margin-right: 10px;
+    width: 35px;
+}
+
+.content .content-left .list-item .item:hover {
+    /* border-right: 10px solid #2a70b8; */
+    background: #2a70b8;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    .header a.logo .logo-title .logo-description {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .header .header-right .header-right-mobile {
+        display: block;
+    }
+    .header .header-right .header-right-desktop {
+        display: none;
+    }
+    .content .content-left {
+        display: none;
+        width: 100%;
+        padding: 10px;
+    }
+    .content .content-right {
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+
+/* Information user */
+
+.text-center {
+    text-align: center;
+}
+
+.information-user .container .image {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+.information-user .container .image img {
+    width: 50%;
+}
+
+input[type="date"] {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-40 {
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+}
+
+.col-60 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 800px) {
+    .col-25,
+    .col-75,
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 0px;
+    }
+    input[type="submit"] {
+        margin-top: 20px;
+    }
+    input[type="date"] {
+        width: 100%;
+    }
+}
+
+
+/* History exam */
+
+#history-exam-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#history-exam-table td,
+#history-exam-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#history-exam-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#history-exam-table tr:hover {
+    background-color: #ddd;
+}
+
+#history-exam-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #2a70b8;
+    color: white;
+}
+
+
+/* History exam detail */
+
+.history-exam .score-box {
+    width: 100%;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.034);
+}
+
+.history-exam .score-box .score {
+    color: red;
+    font-size: 50px;
+}
+
+.history-exam .score-box .score-detail {
+    display: flex;
+}
+
+.history-exam .score-box .score-detail .score-detail-title {
+    flex-grow: 1;
+}
+
+.history-exam .history-exam-detail {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.034);
+    padding: 10px;
+}
+
+.history-exam .history-exam-detail .history-exam-detail-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.history-exam .history-exam-detail .history-exam-detail-item>div {
+    margin-left: 10px;
+}
+
+.history-exam .history-exam-right {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.history-exam .history-exam-left {
+    padding: 20px;
+}
+
+.history-exam .history-exam-right .list-rank .rank-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #2a70b8;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.history-exam .history-exam-right .list-rank .rank-item .rank-item-pos {
+    padding: 5px;
+}
+
+.history-exam .history-exam-right .list-rank .rank-item .rank-item-score {
+    color: red;
+    font-size: 30px;
+}
+
+.history-exam .history-exam-right .list-rank .rank-item>div {
+    padding: 20px;
+}
+
+.history-exam .history-exam-right .list-rank .rank-item .rank-item-info {
+    flex-grow: 1;
+}
+
+.history-exam .history-exam-right .list-rank .rank-item .rank-item-info .time {
+    font-size: 15px;
+    color: grey;
+}
+
+@media screen and (max-width: 1200px) {
+    .history-exam .history-exam-left {
+        width: 100%;
+        padding: 0;
+    }
+    .history-exam .history-exam-right {
+        clear: both;
+        width: 100%;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    color: #000000;
+    font-size: 12px;
+    transform: translateX(50%);
+}
+
+.text-green {
+    color: green;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.text-blue {
+    color: #2a70b8;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}

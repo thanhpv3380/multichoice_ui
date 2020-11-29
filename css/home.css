@@ -1,0 +1,119 @@
+/* :root{
+    --background-color: #2a70b8.
+    --border-color: #337ab7.
+    --text-color: #505050
+    --text-color-heading: #2a70b8
+} */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    font-size: 62.5%; 
+    line-height: 1.6rem;
+   
+    
+    
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+ul li{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.content{
+    
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000000;
+}
+
+.navbar{
+    width:100%;
+    height: 40px;
+    margin-top: 10px;
+    /* background-color: #d64646; */
+    border-bottom: 1px solid #b3b3b3;
+    display: flex;
+}
+
+.navbar .navbar-item{
+    height: 100%;
+    margin-right: 4px;
+    padding: 0px 10px;
+    line-height: 40px;
+    border-top: 1px solid #b3b3b3;
+    border-left: 1px solid #b3b3b3;
+    border-right: 1px solid #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.navbar .navbar-item-clicked{
+    color: #ffffff;
+    background-color:#2a70b8 ;
+}
+
+.list-exams{
+    margin-top: 10px;
+}
+
+.exam{
+    height: 200px;
+    margin-top: 16px;
+    border: 0.5px solid #b3b3b378;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px #bbbbbb;
+}
+.exam .exam-title{
+    height: 55px;
+    background-color: #2a70b8;
+    color: #ffffff;
+    font-size: 1.6rem;
+    padding: 8px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-weight: 600;
+    border-bottom: #0e4a86;
+}
+
+.exam .exam-detail{
+    font-size: 1.5rem;
+    padding: 8px;
+}
+.exam-detail p{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.exam-detail strong{
+    color: #e64b1c;
+}
+.exam .exam-btn{
+    margin: 8px;
+    width: 90px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #2a70b8;
+    font-size: 1.5rem;
+    color: #2a70b8;
+    cursor: pointer;
+}
+.exam .exam-btn:hover{
+    color: #ffffff;
+    background-color: #2a70b8;
+}
