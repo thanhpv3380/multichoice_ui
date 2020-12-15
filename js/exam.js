@@ -5,34 +5,53 @@ window.onload = () => {
 class Exam {
   constructor() {
     console.log("hamf khoi tao");
-    this.initEvent();
+   
     this.loadData();
-  }
+
+
+    this.initEvent();
+    }
   /**
    * Hàm khởi tạo sự kiện cho trang làm bài thi
    */
   initEvent = () => {
     this.countdown(examData.TimeLimited);
+    //TODO: set sự kiện cho answer
+    document.querySelectorAll('.exam-item .answer-item input').forEach( (item) => {
+      item.addEventListener("click", this.answerOnClick);
+    })
+
+    document.getElementById('submit-exam').addEventListener("click",this.submitExamOnclick);
   };
 
   loadData = () => {
+    
+    
     //lấy dữ liệu cần load  
     var Name = examData.NameExam;
     var question = examData.question;
     //vị trí cần load 
     const examName = document.getElementById('exam-name');
     const task = document.getElementById('task');
-    
+    const questionBox = document.getElementById('question-box');
     //load data
     examName.innerHTML = Name; // Tên của bài thi
-
+    var listQuestion = document.createElement('ul');
+    listQuestion.className = "answer row"
     //load câu hỏi
     question.forEach((questionItem, index) => {
-      
+      // tạo element
       var examItem = document.createElement('div');
       var examAnswer = document.createElement('ul');
+      var numQuestion = document.createElement('li')
+      //set class
       examItem.className = "exam-item";
-      examAnswer.className ="exam-answer row"
+      examAnswer.className ="exam-answer row";
+      numQuestion.className = "answer-item ";
+
+      numQuestion.innerHTML = index + 1;
+      questionBox.appendChild(numQuestion);
+      numQuestion.dataset.id=questionItem.id;
       examItem.dataset.id = questionItem.id; // gán id của câu hỏi 
 
       examItem.innerHTML = `
@@ -51,11 +70,9 @@ class Exam {
         examAnswer.appendChild(answerElement);
       })
       examItem.appendChild(examAnswer);
-     
+      
       task.appendChild(examItem);
     })
-
-    
   }
 
 
@@ -69,7 +86,7 @@ class Exam {
       hour = minute * 60,
       day = hour * 24;
     var distance = time * minute;
-
+    var self = this.submitExamOnclick;
     var x = setInterval(function () {
       let h = Math.floor((distance % day) / hour),
         m = Math.floor((distance % hour) / minute),
@@ -84,17 +101,49 @@ class Exam {
       //sự kiện khi hết thời gian làm bài
       if (distance < 0) {
         clearInterval(x);
+
+        self();
         console.log("Exam time out!");
       }
     }, 1000);
   };
+
+  answerOnClick (){
+    //lấy id câu hỏi và đáp án đã chọn 
+    var questionId = this.getAttribute('name');
+    var answerId = this.getAttribute('id');
+    var stringQuery = `.result-box .answer-item[data-id="${questionId}"]`;
+
+    var questionBox = document.querySelector(stringQuery);
+
+    questionBox.classList.add('answer-item-active');
+    questionBox.dataset.answerId = answerId;
+  } 
+
+  submitExamOnclick(){
+    var questionResult = Array.from(document.querySelectorAll('.result-box .answer-item'));
+    var results = questionResult.map((question) => {
+      var result = {
+        questionId: "",
+        answerId : ""
+      };
+      result.questionId = question.dataset.id;
+      
+      result.answerId = question.dataset.answerId;
+
+      return result;
+    })
+    //TODO: thông báo nếu nhận thấy có câu chưa làm 
+    console.log(results);
+  }
+
 }
 
 
 
 var examData = {
     id: '1',
-    TimeLimited: 50,
+    TimeLimited: 0.1,
     NameExam: "ĐỀ THI KẾT THÚC HỌC PHẦN Giải Tích I",
     question: [
       {
